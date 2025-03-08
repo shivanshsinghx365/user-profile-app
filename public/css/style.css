@@ -1,0 +1,452 @@
+:root {
+  --primary-color: #546E7A; /* Muted Blue-Gray */
+  --secondary-color: #78909C; /* Light Gray-Blue */
+  --accent-color: #00B8D4;   /* Bright Cyan (keep accent) */
+  --light-color: #F9F9F9;    /* Off-White Background */
+  --dark-color: #2D3436;     /* Dark Gray Text */
+  --success-color: #4CAF50;
+  --danger-color: #F44336;
+  --border-radius: 12px;
+  --box-shadow-light: 0 5px 15px rgba(0, 0, 0, 0.08);
+  --box-shadow-medium: 0 8px 20px rgba(0, 0, 0, 0.15);
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --gradient-primary: linear-gradient(45deg, var(--primary-color) 0%, var(--secondary-color) 100%); /* Updated Gradient */
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', Arial, sans-serif; /* Changed font-family to Montserrat */
+  line-height: 1.7;
+  color: var(--dark-color);
+  background-color: var(--light-color);
+  overflow-x: hidden;
+  background-image: url('/images/background-image.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 2rem auto; /* More top margin */
+  padding: 1.5rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem; /* Increased bottom margin */
+  padding: 2 rem 0;
+  background: var(--gradient-light); /* Gradient Background */
+  color: var(--light-color); /* Light text on header */
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-medium);
+}
+
+header h1 {
+  font-size: 1.75rem; /* Further reduced font size */
+  font-weight: 600; /* Adjusted font weight */
+  letter-spacing: -0.5px; /* Slightly reduced letter spacing */
+  margin-bottom: 0rem;
+}
+
+header p {
+  font-size: 1.1rem;
+  color: rgba(200, 151, 151, 0.8); /* Slightly transparent text */
+  font-weight: 300;
+}
+
+.form-group {
+  margin-bottom: 2rem; /* Increased spacing */
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+  color: var(--dark-color);
+  font-size: 1.1rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border: 2px solid #ddd;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  color: var(--dark-color);
+  /* background-color: white;  เดิมเป็นสีขาว */
+  background-color: #E3F2FD; /* Light Sky Blue Background for text boxes */
+  transition: var(--transition);
+  box-shadow: var(--box-shadow-light);
+}
+
+.form-group input:focus {
+  border-color: var(--accent-color);
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0, 184, 212, 0.2); /* Accent color focus */
+}
+
+.form-section {
+  margin-bottom: 2.5rem;
+  background-color: #E3F2FD; /* Light Sky Blue background */
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-medium);
+
+  /* ADD THESE LINES BELOW FOR BACKGROUND PATTERN */
+  background-image: repeating-linear-gradient(45deg,
+      rgba(255, 255, 255, 0.1) 0,
+      rgba(255, 255, 255, 0.1) 10px,
+      transparent 10px,
+      transparent 20px); /* Subtle diagonal stripes */
+}
+
+.form-section h2 {
+  margin-bottom: 1.5rem; /* Increased spacing */
+  color: var(--primary-color); /* Primary color for section titles */
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.selection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* Slightly wider items */
+  gap: 1.25rem; /* Increased gap */
+}
+
+.selection-item {
+  border: 2px solid #eee; /* Very light border */
+  border-radius: var(--border-radius);
+  padding: 0.75rem;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Simpler transition */
+  overflow: hidden;
+  background-color: var(--light-color); /* Light background */
+  box-shadow: var(--box-shadow-light);
+}
+
+.selection-item:hover {
+  transform: scale(1.05); /* Slight scale up on hover */
+  box-shadow: var(--box-shadow-medium);
+}
+
+.selection-item.selected {
+  border-color: var(--accent-color);
+  background-color: rgba(0, 184, 212, 0.1); /* Light accent color background */
+  box-shadow: var(--box-shadow-medium);
+}
+
+.image-container {
+  height: 130px; /* Slightly taller image container */
+  margin-bottom: 0.75rem;
+  border-radius: calc(var(--border-radius) - 4px); /* More rounded image corners */
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-out; /* Image zoom transition */
+}
+
+.selection-item:hover .image-container img,
+.selection-item.selected .image-container img {
+  transform: scale(1.1); /* Image zoom on hover/selected */
+}
+
+.selection-item span {
+  display: block;
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--dark-color);
+}
+
+.form-actions {
+  text-align: center;
+  margin-top: 3rem; /* Increased margin */
+}
+
+button {
+  background: var(--gradient-primary); /* Gradient button */
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem; /* More padding */
+  font-size: 1.1rem;
+  border-radius: 100px; /* Pill-shaped button */
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 600;
+  box-shadow: var(--box-shadow-medium);
+  letter-spacing: 0.5px;
+}
+
+button:hover {
+  box-shadow: var(--box-shadow-light);
+  transform: translateY(-3px); /* Lift on hover */
+  opacity: 0.9; /* Slightly reduce opacity */
+}
+
+button:active {
+  transform: translateY(0); /* No lift when active */
+  opacity: 1;
+  box-shadow: var(--box-shadow-light);
+}
+
+
+.notification {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  padding: 1.25rem 2.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-medium);
+  color: white;
+  font-weight: 500;
+  transition: var(--transition);
+  z-index: 1000;
+}
+
+.notification.success {
+  background-color: var(--success-color);
+}
+
+.notification.error {
+  background-color: var(--danger-color);
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px); /* More hidden offset */
+}
+
+/* Range input styling - Modern look */
+input[type="range"] {
+  width: 100%;
+  height: 15px;
+  margin: 10px 0;
+  background-color: transparent;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+  background: var(--accent-color); /* Accent color track */
+  border-radius: 5px;
+  border: 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border: 2px solid var(--light-color);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: var(--light-color); /* Light thumb color */
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -6px;
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: var(--accent-color); /* Keep accent color on focus */
+}
+
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+  background: var(--accent-color);
+  border-radius: 5px;
+  border: 0;
+}
+
+input[type="range"]::-moz-range-thumb {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border: 2px solid var(--light-color);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: var(--light-color);
+  cursor: pointer;
+}
+
+input[type="range"]::-ms-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type="range"]::-ms-fill-lower {
+  background: var(--accent-color);
+  border-radius: 5px;
+}
+
+input[type="range"]::-ms-fill-upper {
+  background: var(--accent-color);
+  border-radius: 5px;
+}
+
+input[type="range"]::-ms-thumb {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border: 2px solid var(--light-color);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: var(--light-color);
+  cursor: pointer;
+}
+
+input[type="range"]:focus::-ms-fill-lower {
+  background: var(--accent-color);
+}
+
+input[type="range"]:focus::-ms-fill-upper {
+  background: var(--accent-color);
+}
+
+
+#spendingRangeValue {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+
+@media screen and (max-width: 768px) {
+  .container {
+    /* max-width: 1200px;  เดิมเป็น 1200px */
+    max-width: 960px; /* Reduced max-width for narrower layout */
+    margin: 2rem auto;
+    padding: 1.5rem;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 2rem; /* Adjusted margin-bottom */
+    padding: 1.5rem 0; /* Reduced vertical padding */
+    background: var(--secondary-primary); /* Gradient Background */
+    color: var(--dark-color); /* Light text on header */
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-medium);
+  }
+
+  header h1 {
+    font-size: 2rem; /* Slightly reduced font size */
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 0rem; /* Removed margin-bottom */
+  }
+
+  header p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8); /* Slightly transparent text */
+    font-weight: 300;
+  }
+
+  .selection-grid {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); เดิมเป็น auto-fill */
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Changed to auto-fit and reduced minmax */
+    gap: 1.25rem;
+  }
+
+  .image-container {
+    height: 110px;
+  }
+
+  .form-section {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .form-section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  button {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+  }
+
+  .notification {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    padding: 1rem 2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 0.75rem;
+    margin: 0.75rem auto;
+  }
+
+  header {
+    padding: 1.5rem 0;
+    margin-bottom: 1.5rem;
+  }
+
+  header h1 {
+    font-size: 1.75rem;
+  }
+
+  .selection-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .image-container {
+    height: 90px;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-section {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  button {
+    width: 100%;
+    padding: 0.9rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .notification {
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+}

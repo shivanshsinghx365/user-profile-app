@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Discover Your Perfect Travel Experiences</h1>
+    </header>
+    
+    <form id="profileForm">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required placeholder="Enter your email address">
+      </div>
+      
+      <div class="form-section">
+        <h2>Select Your Interests</h2>
+        <div class="selection-grid" id="interests-container">
+          <div class="selection-item" data-value="hiking">
+            <div class="image-container">
+              <img src="/images/interests/hiking.jpg" alt="Hiking">
+            </div>
+            <span>Hiking</span>
+          </div>
+          <div class="selection-item" data-value="paragliding">
+            <div class="image-container">
+              <img src="/images/interests/paragliding.jpg" alt="Paragliding">
+            </div>
+            <span>Paragliding</span>
+          </div>
+          <div class="selection-item" data-value="trekking">
+            <div class="image-container">
+              <img src="/images/interests/trekking.jpg" alt="Trekking">
+            </div>
+            <span>Trekking</span>
+          </div>
+          <div class="selection-item" data-value="camping">
+            <div class="image-container">
+              <img src="/images/interests/camping.jpg" alt="Camping">
+            </div>
+            <span>Camping</span>
+          </div>
+          <div class="selection-item" data-value="cycling">
+            <div class="image-container">
+              <img src="/images/interests/cycling.jpg" alt="Cycling">
+            </div>
+            <span>Cycling</span>
+          </div>
+          <div class="selection-item" data-value="photography">
+            <div class="image-container">
+              <img src="/images/interests/photography.jpg" alt="Photography">
+            </div>
+            <span>Photography</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-section">
+        <h2>Preferred Locations</h2>
+        <div class="selection-grid" id="locations-container">
+          <div class="selection-item" data-value="beaches">
+            <div class="image-container">
+              <img src="/images/locations/beaches.webp" alt="Beaches">
+            </div>
+            <span>Beaches</span>
+          </div>
+          <div class="selection-item" data-value="forest">
+            <div class="image-container">
+              <img src="/images/locations/forest.jpg" alt="Forest">
+            </div>
+            <span>Forest</span>
+          </div>
+          <div class="selection-item" data-value="mountains">
+            <div class="image-container">
+              <img src="/images/locations/mountains.jpg" alt="Mountains">
+            </div>
+            <span>Mountains</span>
+          </div>
+          <div class="selection-item" data-value="desert">
+            <div class="image-container">
+              <img src="/images/locations/desert.jpg" alt="Desert">
+            </div>
+            <span>Desert</span>
+          </div>
+          <div class="selection-item" data-value="urban">
+            <div class="image-container">
+              <img src="/images/locations/urban.jpg" alt="Urban">
+            </div>
+            <span>Urban</span>
+          </div>
+          <div class="selection-item" data-value="countryside">
+            <div class="image-container">
+              <img src="/images/locations/countryside.jpg" alt="Countryside">
+            </div>
+            <span>Countryside</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-section">
+        <h2>Travel Type</h2>
+        <div class="selection-grid" id="travel-type-container">
+          <div class="selection-item" data-value="solo">
+            <div class="image-container">
+              <img src="/images/travel-types/solo.jpg" alt="Solo Travel">
+            </div>
+            <span>Solo</span>
+          </div>
+          <div class="selection-item" data-value="business">
+            <div class="image-container">
+              <img src="/images/travel-types/business.jpg" alt="Business Trip">
+            </div>
+            <span>Business</span>
+          </div>
+          <div class="selection-item" data-value="family">
+            <div class="image-container">
+              <img src="/images/travel-types/family.jpg" alt="Family Trip">
+            </div>
+            <span>Family</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-section">
+        <h2>Budget Preference</h2>
+        <div class="selection-grid" id="budget-preference-container">
+          <div class="selection-item" data-value="budget-friendly">
+            <div class="image-container">
+              <img src="/images/budget-preferences/budget-friendly.webp" alt="Budget Friendly">
+            </div>
+            <span>Budget Friendly</span>
+          </div>
+          <div class="selection-item" data-value="luxury">
+            <div class="image-container">
+              <img src="/images/budget-preferences/luxury.jpg" alt="Luxury">
+            </div>
+            <span>Luxury</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-section">
+        <h2>Spending Range (per trip in USD)</h2>
+        <div class="form-group">
+          <input type="range" id="spendingRange" name="spendingRange" min="0" max="10000" step="100" value="0">
+          <p id="spendingRangeValue">Value: $0</p>
+        </div>
+      </div>
+      <div class="form-actions">
+        <button type="submit" id="saveButton">Save Profile</button>
+      </div>
+    </form>
+    
+    <div id="notification" class="notification hidden"></div>
+  </div>
+  
+  <script src="/js/main.js"></script>
+</body>
+</html>
