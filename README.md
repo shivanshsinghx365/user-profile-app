@@ -25,7 +25,7 @@ A responsive web application for creating and managing user profiles with MongoD
 3. Create a `.env` file in the root directory with the following content:
    ```
    MONGODB_URI=mongodb://localhost:27017/userProfileDB
-   PORT=3000
+   PORT=8080
    ```
 
 4. Start the server:
